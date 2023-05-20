@@ -9,30 +9,31 @@ function App() {
   useEffect(() => {
     const body = document.querySelector('body');
     body.style.background = 'white';
-    
+
     return () => {
       body.style.background = ''; // Reverta para o estilo de fundo padrão ao remover o componente
     };
   }, []);
-  
-  
+
+
   return (
-    
+
     <BrowserRouter>
-       <div className="App">
-      <img src={logo} alt="Logo" className="logo" />
-      <img src={logo1} alt="Logo1" className="logo1" />
+      <div className="App">
+        <img src={logo} alt="Logo" className="logo" style={{ maxWidth: '100%' }} />
+        <img src={logo1} alt="Logo1" className="logo1" style={{ maxWidth: '100%' }} />
+
         <div className="background"></div>
         <div className="button-container">
-          
-         
+
+
           <Link to="/consultarobjetos">
             <button className="main-button">Consultar Objetos</button>
           </Link>
 
         </div>
         <Routes>
-          
+
           <Route path="/consultarobjetos" element={<ConsultarObjetos />} />
 
         </Routes>
